@@ -1,9 +1,9 @@
 {
   "name": "formstate-ts",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "type safe typescript library for managing form state in react",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc"
   },

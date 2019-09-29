@@ -1,2 +1,3 @@
-export { Form } from './form'
-export { strHandler, numberHandler } from './helpers'
+export * from './form'
+export * from './helpers'
+export * from './types'
