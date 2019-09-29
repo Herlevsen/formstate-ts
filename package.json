@@ -1,0 +1,21 @@
+{
+  "name": "formts",
+  "version": "0.1.0",
+  "description": "type safe typescript library for managing form state in react",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
+  "types": "dist/index.d.ts",
+  "author": "Jens Herlevsen",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^16.9.3",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}
