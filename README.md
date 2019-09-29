@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Herlevsen/formstate-ts/blob/master/logo.png" width="415" height="157" alt="Formik.js" />
+  <img src="https://github.com/Herlevsen/formstate-ts/blob/master/logo.png" width="415" height="157" alt="formstate-ts logo" />
 </p>
 
 ## Description
