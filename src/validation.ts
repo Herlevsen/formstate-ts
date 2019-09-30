@@ -26,9 +26,9 @@ export const stringLessThan = (length: number) => (str: string) => str.length < 
 export const stringLessThanOrEqual = (length: number) => (str: string) => str.length <= length
 
 // Number validation
-export const numberGreaterThan = (length: number) => (num: number) => num > length
-export const numberGreaterThanOrEqual = (length: number) => (num: number) => num >= length
-export const numberLessThan = (length: number) => (num: number) => num < length
-export const numberLessThanOrEqual = (length: number) => (num: number) => num <= length
+export const numberGreaterThan = (otherNum: number) => (num: number) => num > otherNum
+export const numberGreaterThanOrEqual = (otherNum: number) => (num: number) => num >= otherNum
+export const numberLessThan = (otherNum: number) => (num: number) => num < otherNum
+export const numberLessThanOrEqual = (otherNum: number) => (num: number) => num <= otherNum
 export const isInteger = (num: number) => num % 1 === 0
 export const isFloat = (num: number) => num % 1 !== 0
