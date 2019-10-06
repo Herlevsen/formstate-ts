@@ -19,7 +19,8 @@
     "@types/react": "^16.9.3",
     "rimraf": "^3.0.0",
     "typedoc": "^0.15.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "utility-types": "^3.8.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"

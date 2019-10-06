@@ -5,7 +5,7 @@ import {
     StandardErrorType,
     FormComponentProps,
     ValidationReturnType,
-    FormField
+    FormField,
 } from './types'
 
 /**
