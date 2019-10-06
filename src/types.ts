@@ -23,7 +23,7 @@ export interface FormField<ValueType, ErrorType> {
   onBlur: () => void
 }
   
-export interface FormChildrenProps<Values, ErrorType> {
+export interface FormChildrenProps<Values, ErrorType = StandardErrorType> {
   /** Map of all fields, with the respective values, errors, change handler etc. */
   fields:   {[K in keyof Values]: FormField<Values[K], ErrorType>}
   /** Map of all the values. Use this if you need to pass all the data somewhere else. */

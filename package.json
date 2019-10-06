@@ -8,7 +8,9 @@
     "type": "git",
     "url": "https://github.com/Herlevsen/formstate-ts"
   },
+  "test": "jest",
   "scripts": {
+    "test": "jest",
     "build": "rimraf lib && tsc && npm run docs",
     "docs": "typedoc --out docs ./src"
   },
@@ -16,8 +18,14 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@testing-library/react": "^9.3.0",
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.3",
+    "jest": "^24.9.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
     "typedoc": "^0.15.0",
     "typescript": "^3.6.3",
     "utility-types": "^3.8.0"
