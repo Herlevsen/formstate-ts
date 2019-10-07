@@ -26,7 +26,7 @@ export interface FormField<ValueType, ErrorType> {
      */
     onBlur: () => void;
 }
-export interface FormChildrenProps<Values, ErrorType> {
+export interface FormChildrenProps<Values, ErrorType = StandardErrorType> {
     /** Map of all fields, with the respective values, errors, change handler etc. */
     fields: {
         [K in keyof Values]: FormField<Values[K], ErrorType>;
@@ -42,15 +42,20 @@ export interface FormChildrenProps<Values, ErrorType> {
     /** Set values for some of the fields */
     setSomeFields: (fieldValues: Partial<Values>) => void;
 }
-export interface FormComponentProps<Values extends FormValues, ErrorType = StandardErrorType> {
+export interface FormProps<Values extends FormValues, ErrorType = StandardErrorType> {
     /** The values that the form will be initialized with. */
     initialValues: Values;
     /** A function that will validate the fields in the form on every onChange call.
      * @param form The values of all the fields
     */
     validation?: (form: Values) => ValidationReturnType<Values, ErrorType>;
+}
+export interface FormComponentProps<Values extends FormValues, ErrorType = StandardErrorType> extends FormProps<Values, ErrorType> {
     /**
      * The children property should be passed a function that takes {@link FormChildrenProps} as a parameter and returns a React.ReactElement
      */
     children: (form: FormChildrenProps<Values, ErrorType>) => React.ReactElement;
 }
+export declare type HOCWrappedComponentFormProps<Values extends FormValues, ErrorType = StandardErrorType> = {
+    form: FormChildrenProps<Values, ErrorType>;
+};

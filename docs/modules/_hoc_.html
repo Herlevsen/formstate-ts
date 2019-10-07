@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;form&quot; | formstate-ts</title>
+	<title>&quot;hoc&quot; | formstate-ts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_form_.html">&quot;form&quot;</a>
+					<a href="_hoc_.html">&quot;hoc&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;form&quot;</h1>
+			<h1>External module &quot;hoc&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_form_.html#form" class="tsd-kind-icon">Form</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_hoc_.html#withform" class="tsd-kind-icon">with<wbr>Form</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,26 +82,18 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="form" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> Form</h3>
+					<a name="withform" class="tsd-anchor"></a>
+					<h3>with<wbr>Form</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">Form&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.formcomponentprops.html" class="tsd-signature-type">FormComponentProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReactElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">with<wbr>Form&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">(</span>ownProps<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_.formprops.html" class="tsd-signature-type">FormProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/form.ts#L18">form.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/hoc.tsx#L6">hoc.tsx:6</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The form component. You are required to pass in the initialProps and the field types will be inferred from here.
-										You can optionally set the fields types with the generic parameter Values, like so:
-									&lt;Form&lt;{username: string, password: string}&gt; initialValues={....} &gt;</p>
-								</div>
-								<p>You can change the type of the errors with the second generic parameter. By default it is &quot;string | undefined&quot;</p>
-							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -114,10 +106,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>props: <a href="../interfaces/_types_.formcomponentprops.html" class="tsd-signature-type">FormComponentProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>ownProps: <a href="../interfaces/_types_.formprops.html" class="tsd-signature-type">FormProps</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReactElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -129,13 +121,13 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_form_.html">"form"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_helpers_.html">"helpers"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_hoc_.html">"hoc"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -152,7 +144,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_form_.html#form" class="tsd-kind-icon">Form</a>
+						<a href="_hoc_.html#withform" class="tsd-kind-icon">with<wbr>Form</a>
 					</li>
 				</ul>
 			</nav>

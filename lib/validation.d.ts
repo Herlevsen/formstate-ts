@@ -15,9 +15,9 @@ export declare const stringGreaterThan: (length: number) => (str: string) => boo
 export declare const stringGreaterThanOrEqual: (length: number) => (str: string) => boolean;
 export declare const stringLessThan: (length: number) => (str: string) => boolean;
 export declare const stringLessThanOrEqual: (length: number) => (str: string) => boolean;
-export declare const numberGreaterThan: (length: number) => (num: number) => boolean;
-export declare const numberGreaterThanOrEqual: (length: number) => (num: number) => boolean;
-export declare const numberLessThan: (length: number) => (num: number) => boolean;
-export declare const numberLessThanOrEqual: (length: number) => (num: number) => boolean;
+export declare const numberGreaterThan: (otherNum: number) => (num: number) => boolean;
+export declare const numberGreaterThanOrEqual: (otherNum: number) => (num: number) => boolean;
+export declare const numberLessThan: (otherNum: number) => (num: number) => boolean;
+export declare const numberLessThanOrEqual: (otherNum: number) => (num: number) => boolean;
 export declare const isInteger: (num: number) => boolean;
 export declare const isFloat: (num: number) => boolean;
