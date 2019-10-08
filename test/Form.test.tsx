@@ -2,16 +2,18 @@ import * as React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { Form } from '../src/form'
 import { FormChildrenProps } from '../src/types'
+import { act } from 'react-dom/test-utils'
 
 type SimpleForm = {
   firstName: string
   lastName: string
+  yearOfBirth: number
 }
 
 const renderSimpleForm = () => {
   let formProps: FormChildrenProps<SimpleForm>
   const utils = render(
-    <Form<SimpleForm> initialValues={{firstName: 'John', lastName: 'Doe'}}>{form => {
+    <Form<SimpleForm> initialValues={{firstName: 'John', lastName: 'Doe', yearOfBirth: 1985}}>{form => {
       const { firstName } = form.fields
       formProps = form
       return (
@@ -66,5 +68,36 @@ describe('Form Component', () => {
     expect(getFormProps().fields.firstName.touched).toBe(false)
     fireEvent.blur(input)
     expect(getFormProps().fields.firstName.touched).toBe(true)
+  })
+
+  it('Can set a subset of fields at once', () => {
+    const result = renderSimpleForm()
+    const { getFormProps } = result
+
+    act(() => getFormProps().setSomeFields({firstName: 'Jack', yearOfBirth: 1980}))
+    expect(getFormProps().values).toEqual({firstName: 'Jack', lastName: 'Doe', yearOfBirth: 1980})
+  })
+
+  it('Can set all fields at once', () => {
+    const result = renderSimpleForm()
+    const { getFormProps } = result
+
+    act(() => getFormProps().setAllFields({firstName: 'Jack', lastName: 'Dane', yearOfBirth: 1980}))
+    expect(getFormProps().values).toEqual({firstName: 'Jack', lastName: 'Dane', yearOfBirth: 1980})
+  })
+
+  it('Can reset to the initial state', () => {
+    const result = renderSimpleForm()
+    const { input, getFormProps } = result
+
+    fireEvent.change( input, { target: { value: 'Jack' } } )
+    fireEvent.blur( input )
+    expect(getFormProps().values).toEqual({firstName: 'Jack', lastName: 'Doe', yearOfBirth: 1985})
+    expect(getFormProps().fields.firstName.touched).toBe(true)
+
+    // Reset form state
+    act(() => getFormProps().reset())
+    expect(getFormProps().values).toEqual({firstName: 'John', lastName: 'Doe', yearOfBirth: 1985})
+    expect(getFormProps().fields.firstName.touched).toBe(false)
   })
 })
