@@ -1,11 +1,11 @@
 import * as React from 'react'
 
 import {
-    FormValues,
-    StandardErrorType,
-    FormComponentProps,
-    ValidationReturnType,
-    FormField,
+  FormValues,
+  StandardErrorType,
+  FormComponentProps,
+  ValidationReturnType,
+  FormField,
 } from './types'
 
 /**
