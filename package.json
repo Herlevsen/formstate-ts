@@ -8,9 +8,9 @@
     "type": "git",
     "url": "https://github.com/Herlevsen/formstate-ts"
   },
-  "test": "jest",
+  "test": "test",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "rimraf lib && tsc && npm run docs",
     "docs": "typedoc --out docs ./src"
   },
