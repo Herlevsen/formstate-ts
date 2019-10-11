@@ -14,7 +14,8 @@
     "build": "rimraf lib && tsc && npm run docs",
     "docs": "typedoc --out docs ./src",
     "lint": "eslint --ext ts --ext tsx src/*",
-    "precommit": "npm run lint"
+    "precommit": "npm run prettier && npm run lint",
+    "prettier": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json}\" \"test/**/*.{ts,tsx,js,jsx,json}\""
   },
   "author": "Jens Herlevsen",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "eslint": "^6.5.1",
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
+    "prettier": "1.18.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rimraf": "^3.0.0",

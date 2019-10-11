@@ -1,5 +1,7 @@
-export type FormValues = {[key: string]: unknown}
-export type ValidationReturnType<Values, ErrorType> = Partial<{[K in keyof Values]: ErrorType}>
+export type FormValues = { [key: string]: unknown }
+export type ValidationReturnType<Values, ErrorType> = Partial<
+  { [K in keyof Values]: ErrorType }
+>
 export type StandardErrorType = string | undefined
 
 export interface FormField<ValueType, ErrorType> {
@@ -22,38 +24,47 @@ export interface FormField<ValueType, ErrorType> {
    */
   onBlur: () => void
 }
-  
+
 export interface FormChildrenProps<Values, ErrorType = StandardErrorType> {
   /** Map of all fields, with the respective values, errors, change handler etc. */
-  fields:   {[K in keyof Values]: FormField<Values[K], ErrorType>}
+  fields: { [K in keyof Values]: FormField<Values[K], ErrorType> }
   /** Map of all the values. Use this if you need to pass all the data somewhere else. */
-  values:   Values
+  values: Values
   /** Manually run the validation. */
   validate: () => ValidationReturnType<Values, ErrorType>
   /** Reset the fields to their initial values */
-  reset:    () => void
+  reset: () => void
   /** Set values for all fields at once */
   setAllFields: (fieldValues: Values) => void
   /** Set values for some of the fields */
   setSomeFields: (fieldValues: Partial<Values>) => void
 }
 
-export interface FormProps<Values extends FormValues, ErrorType = StandardErrorType> {
+export interface FormProps<
+  Values extends FormValues,
+  ErrorType = StandardErrorType
+> {
   /** The values that the form will be initialized with. */
   initialValues: Values
   /** A function that will validate the fields in the form on every onChange call.
    * @param form The values of all the fields
-  */
+   */
   validation?: (form: Values) => ValidationReturnType<Values, ErrorType>
 }
-  
-export interface FormComponentProps<Values extends FormValues, ErrorType = StandardErrorType> extends FormProps<Values, ErrorType> {
+
+export interface FormComponentProps<
+  Values extends FormValues,
+  ErrorType = StandardErrorType
+> extends FormProps<Values, ErrorType> {
   /**
    * The children property should be passed a function that takes {@link FormChildrenProps} as a parameter and returns a React.ReactElement
    */
   children: (form: FormChildrenProps<Values, ErrorType>) => React.ReactElement
 }
 
-export type HOCWrappedComponentFormProps<Values extends FormValues, ErrorType = StandardErrorType> = {
+export type HOCWrappedComponentFormProps<
+  Values extends FormValues,
+  ErrorType = StandardErrorType
+> = {
   form: FormChildrenProps<Values, ErrorType>
 }
