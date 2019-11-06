@@ -1,4 +1,7 @@
 export type FormValues = { [key: string]: unknown }
+export type ValidationFunction<Values, ErrorType> = (
+  form: Values
+) => ValidationReturnType<Values, ErrorType>
 export type ValidationReturnType<Values, ErrorType> = Partial<
   { [K in keyof Values]: ErrorType }
 >
@@ -53,7 +56,7 @@ export interface FormProps<
   /** A function that will validate the fields in the form on every onChange call.
    * @param form The values of all the fields
    */
-  validation?: (form: Values) => ValidationReturnType<Values, ErrorType>
+  validation?: ValidationFunction<Values, ErrorType>
 }
 
 export interface FormComponentProps<
