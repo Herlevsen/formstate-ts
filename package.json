@@ -10,7 +10,7 @@
   },
   "scripts": {
     "pretest": "npm run lint",
-    "test": "jest --coverage",
+    "test": "jest",
     "build": "rimraf lib && tsc && npm run docs",
     "docs": "typedoc --out docs ./src",
     "lint": "eslint --ext ts --ext tsx src/*",

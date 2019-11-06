@@ -130,4 +130,80 @@ describe('Form Component', () => {
     })
     expect(getFormProps().fields.firstName.touched).toBe(false)
   })
+
+  it('Calls the validation function if one is provided', () => {
+    const validationFnMock = jest.fn(() => ({
+      firstName: 'Too short',
+    }))
+    render(
+      <Form<SimpleForm>
+        initialValues={{
+          firstName: 'John',
+          lastName: 'Doe',
+          yearOfBirth: 1985,
+        }}
+        validation={validationFnMock}
+      >
+        {() => {
+          return <div>Nothing here</div>
+        }}
+      </Form>
+    )
+
+    expect(validationFnMock.mock.calls.length).toBe(1)
+  })
+
+  it('It returns a validation result when running the validate function', () => {
+    render(
+      <Form
+        initialValues={{ firstName: 'John' }}
+        validation={() => ({ firstName: 'Name incorrect' })}
+      >
+        {form => {
+          React.useEffect(() => {
+            const validationResult = form.validate()
+
+            expect(validationResult.isValid).toBe(false)
+            expect(validationResult.errors.firstName).toBe('Name incorrect')
+          })
+          return <div>Nothing here</div>
+        }}
+      </Form>
+    )
+  })
+
+  it('Validate function returns true when no validation function is provided', () => {
+    render(
+      <Form initialValues={{ firstName: 'John' }}>
+        {form => {
+          React.useEffect(() => {
+            const validationResult = form.validate()
+
+            expect(validationResult.isValid).toBe(true)
+            expect(validationResult.errors).toEqual({})
+          })
+          return <div>Nothing here</div>
+        }}
+      </Form>
+    )
+  })
+
+  it('Validate function removes undefined errors', () => {
+    render(
+      <Form
+        initialValues={{ firstName: 'John' }}
+        validation={() => ({ firstName: undefined })}
+      >
+        {form => {
+          React.useEffect(() => {
+            const validationResult = form.validate()
+
+            expect(validationResult.isValid).toBe(true)
+            expect(validationResult.errors).toEqual({})
+          })
+          return <div>Nothing here</div>
+        }}
+      </Form>
+    )
+  })
 })

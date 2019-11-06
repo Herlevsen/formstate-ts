@@ -2,6 +2,10 @@ export type FormValues = { [key: string]: unknown }
 export type ValidationReturnType<Values, ErrorType> = Partial<
   { [K in keyof Values]: ErrorType }
 >
+export type ValidateFormFunction<Values, ErrorType> = {
+  isValid: boolean
+  errors: ValidationReturnType<Values, ErrorType>
+}
 export type StandardErrorType = string | undefined
 
 export interface FormField<ValueType, ErrorType> {
@@ -31,7 +35,7 @@ export interface FormChildrenProps<Values, ErrorType = StandardErrorType> {
   /** Map of all the values. Use this if you need to pass all the data somewhere else. */
   values: Values
   /** Manually run the validation. */
-  validate: () => ValidationReturnType<Values, ErrorType>
+  validate: () => ValidateFormFunction<Values, ErrorType>
   /** Reset the fields to their initial values */
   reset: () => void
   /** Set values for all fields at once */

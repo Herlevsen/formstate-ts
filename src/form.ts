@@ -47,7 +47,21 @@ export const Form = <Values extends FormValues, ErrorType = StandardErrorType>(
   return props.children({
     fields,
     values: stateFields,
-    validate: () => (props.validation ? props.validation(stateFields) : {}),
+    validate: () => {
+      const result: Partial<
+        { [K in keyof Values]: ErrorType }
+      > = props.validation ? props.validation(stateFields) : {}
+      // Delete undefined values, as they are not considered errors. Note: Mutating object
+      Object.entries(result).forEach(entry => {
+        const key = entry[0]
+        const value = entry[1]
+        if (value === undefined) delete result[key]
+      })
+      return {
+        isValid: Object.keys(result).length === 0,
+        errors: result,
+      }
+    },
     setAllFields: setFields,
     setSomeFields: fieldValues => setFields({ ...stateFields, ...fieldValues }),
     reset: () => {
