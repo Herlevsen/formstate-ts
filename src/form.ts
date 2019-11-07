@@ -64,8 +64,17 @@ export const Form = <Values extends FormValues, ErrorType = StandardErrorType>(
       value,
       touched: touched[key] || false,
       error: validationResult[key],
-      onChange: (value: unknown) => setFields({ ...stateFields, [key]: value }),
-      onBlur: () => setTouched({ ...touched, [key]: true }),
+      onChange: (value: unknown) => {
+        setFields(currentFieldsState => ({
+          ...currentFieldsState,
+          [key]: value,
+        }))
+      },
+      onBlur: () =>
+        setTouched(currentTouchedState => ({
+          ...currentTouchedState,
+          [key]: true,
+        })),
     }
     return { ...result, [key]: field }
   }, {}) as { [K in keyof Values]: FormField<Values[K], ErrorType> }

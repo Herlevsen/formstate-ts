@@ -85,6 +85,8 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_types_.html#formvalues" class="tsd-kind-icon">Form<wbr>Values</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_types_.html#hocwrappedcomponentformprops" class="tsd-kind-icon">HOCWrapped<wbr>Component<wbr>Form<wbr>Props</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_types_.html#standarderrortype" class="tsd-kind-icon">Standard<wbr>Error<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_types_.html#validateformfunction" class="tsd-kind-icon">Validate<wbr>Form<wbr>Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_types_.html#validationfunction" class="tsd-kind-icon">Validation<wbr>Function</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_types_.html#validationreturntype" class="tsd-kind-icon">Validation<wbr>Return<wbr>Type</a></li>
 							</ul>
 						</section>
@@ -99,7 +101,7 @@
 					<div class="tsd-signature tsd-kind-icon">Form<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/types.ts#L1">types.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L1">types.ts:1</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -117,7 +119,7 @@
 					<div class="tsd-signature tsd-kind-icon">HOCWrapped<wbr>Component<wbr>Form<wbr>Props&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/types.ts#L57">types.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L72">types.ts:72</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -144,9 +146,79 @@
 					<div class="tsd-signature tsd-kind-icon">Standard<wbr>Error<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/types.ts#L3">types.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L12">types.ts:12</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="validateformfunction" class="tsd-anchor"></a>
+					<h3>Validate<wbr>Form<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Validate<wbr>Form<wbr>Function&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L8">types.ts:8</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>Values</h4>
+						</li>
+						<li>
+							<h4>ErrorType</h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>errors<span class="tsd-signature-symbol">: </span><a href="_types_.html#validationreturntype" class="tsd-signature-type">ValidationReturnType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>is<wbr>Valid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="validationfunction" class="tsd-anchor"></a>
+					<h3>Validation<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Validation<wbr>Function&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L2">types.ts:2</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>Values</h4>
+						</li>
+						<li>
+							<h4>ErrorType</h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>form<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_.html#validationreturntype" class="tsd-signature-type">ValidationReturnType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>form: <span class="tsd-signature-type">Values</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="_types_.html#validationreturntype" class="tsd-signature-type">ValidationReturnType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Values</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 					<a name="validationreturntype" class="tsd-anchor"></a>
@@ -154,7 +226,7 @@
 					<div class="tsd-signature tsd-kind-icon">Validation<wbr>Return<wbr>Type&lt;Values, ErrorType&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/454d26e/src/types.ts#L2">types.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/Herlevsen/formstate-ts/blob/58168d3/src/types.ts#L5">types.ts:5</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -217,6 +289,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="_types_.html#standarderrortype" class="tsd-kind-icon">Standard<wbr>Error<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_types_.html#validateformfunction" class="tsd-kind-icon">Validate<wbr>Form<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_types_.html#validationfunction" class="tsd-kind-icon">Validation<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_types_.html#validationreturntype" class="tsd-kind-icon">Validation<wbr>Return<wbr>Type</a>
