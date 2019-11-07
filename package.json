@@ -1,6 +1,6 @@
 {
   "name": "formstate-ts",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "type safe typescript library for managing form state in react",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
