@@ -45,6 +45,8 @@ export interface FormChildrenProps<Values, ErrorType = StandardErrorType> {
   setAllFields: (fieldValues: Values) => void
   /** Set values for some of the fields */
   setSomeFields: (fieldValues: Partial<Values>) => void
+  /** Set all the fields as touched */
+  setAllTouched: (touched?: boolean) => void
 }
 
 export interface FormProps<

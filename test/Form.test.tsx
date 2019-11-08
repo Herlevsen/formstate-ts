@@ -206,4 +206,23 @@ describe('Form Component', () => {
       </Form>
     )
   })
+
+  it('Sets all fields as touched when calling setAllTouched', () => {
+    const { getFormProps } = renderSimpleForm()
+
+    const { fields, setAllTouched } = getFormProps()
+    expect(fields.firstName.touched).toBe(false)
+    expect(fields.lastName.touched).toBe(false)
+    expect(fields.yearOfBirth.touched).toBe(false)
+    act(() => setAllTouched())
+    const { fields: newFields } = getFormProps()
+    expect(newFields.firstName.touched).toBe(true)
+    expect(newFields.lastName.touched).toBe(true)
+    expect(newFields.yearOfBirth.touched).toBe(true)
+    act(() => setAllTouched(false))
+    const { fields: untouchedFields } = getFormProps()
+    expect(untouchedFields.firstName.touched).toBe(false)
+    expect(untouchedFields.lastName.touched).toBe(false)
+    expect(untouchedFields.yearOfBirth.touched).toBe(false)
+  })
 })

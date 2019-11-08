@@ -47,7 +47,13 @@ export const Form = <Values extends FormValues, ErrorType = StandardErrorType>(
   const [stateFields, setFields] = React.useState<Values>(props.initialValues)
   const [touched, setTouched] = React.useState<
     Partial<{ [K in keyof Values]: boolean }>
-  >({})
+  >(() => {
+    const touchedState: Partial<{ [K in keyof Values]: boolean }> = {}
+    Object.keys(props.initialValues).forEach(key => {
+      touchedState[key as keyof Values] = false
+    })
+    return touchedState
+  })
 
   const validationResult = props.validation
     ? props.validation(stateFields)
@@ -88,6 +94,15 @@ export const Form = <Values extends FormValues, ErrorType = StandardErrorType>(
     reset: () => {
       setFields(props.initialValues)
       setTouched({})
+    },
+    setAllTouched: (touched = true) => {
+      setTouched(touchedFieldsState => {
+        const newState = { ...touchedFieldsState }
+        Object.keys(newState).forEach(key => {
+          newState[key as keyof Values] = touched
+        })
+        return newState
+      })
     },
   })
 }
